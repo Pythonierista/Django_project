@@ -38,3 +38,8 @@ def register(request):
                 return redirect('register')
         context = {'form': form}
         return render(request, 'register.html', context)
+
+
+def log_out(request):
+    logout(request)
+    return redirect('home')
