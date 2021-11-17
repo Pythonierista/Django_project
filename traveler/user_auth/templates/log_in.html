@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+{%  extends 'main.html' %}
+{% block content %}
+
 <html>
     
 <head>
@@ -16,9 +18,14 @@
 			height: 100%;
 			background: #7abecc !important;
 		}
+
+		.bg-light {
+    		background-color: #74cfbf!important;
+		}
+
 		.user_card {
 			width: 350px;
-			margin-top: auto;
+			margin-top: 80px;
 			margin-bottom: auto;
 			background: #74cfbf;
 			position: relative;
@@ -126,3 +133,5 @@
 </body>
 
 </html>
+
+{% endblock %}

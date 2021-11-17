@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import CreateUserForm
+from django.contrib.auth.decorators import login_required
 
 
 def home_page(request):
@@ -47,3 +48,13 @@ def register(request):
 def log_out(request):
     logout(request)
     return redirect('home')
+
+
+def user_page(request):
+    if not request.user.is_authenticated:
+        return redirect('home')
+    else:
+        form = request.user
+        print(type(form))
+        context = {'form': form}
+        return render(request, 'user.html', context)
